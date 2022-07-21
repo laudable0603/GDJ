@@ -13,8 +13,8 @@ public class Ex02 {
 		//변수 a의 값을 1증가시키고 사용한다.
 		int a = 1;
 		int b = ++a;
-		System.out.println(a);
-		System.out.println(b);
+		System.out.println("a"+a);
+		System.out.println("b"+b);
 		
 		//후위 연산(post operator)
 		//a++
@@ -23,17 +23,17 @@ public class Ex02 {
 		int x = 1;
 		int y = x++;
 		
-		System.out.println(x);
-		System.out.println(y);
+		System.out.println("x"+x);
+		System.out.println("y"+y);
 		
 		//연습
-		int i = 3;
-		int j = 6;
+		int i = 2;
+		int j = 1;
 		int result =  i++ + --j;// i= 3+1 후 i값은 3으로 된다.
 		
-		System.out.println(i);//2
-		System.out.println(j);//0
-		System.out.println(result);//1+0=1
+		System.out.println("i"+i);//2
+		System.out.println("j"+j);//0
+		System.out.println("result"+result);//1+0=1
 	}
 
 }
