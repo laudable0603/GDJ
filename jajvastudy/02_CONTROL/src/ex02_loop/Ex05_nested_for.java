@@ -57,9 +57,9 @@ public class Ex05_nested_for {
 		//2x2=4  3x2=6 ... 9x2=18
 		for(int n = 1; n <= 9; n++) {
 			for (int dan = 1; dan <=9; dan++) {
-				System.out.print(dan + " x " + n + " = " + (dan * n) + " \t");
+				System.out.print(dan + " x " + n + " = " + (dan * n) + "\t");
 			}
-			System.out.println();
+			System.out.println();//줄바꿈
 		}
 				
 			
