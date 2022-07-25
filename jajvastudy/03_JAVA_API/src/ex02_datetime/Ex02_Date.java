@@ -11,10 +11,13 @@ public class Ex02_Date {
 		//패키지 다음에 마침표(.) 를 적고 클래스명을 적는다.
 		
 		java.lang.System.out.println("Hello");
-		System.out.println("Hello");
+		
+		
 		
 		//예외 규칙
 		//java.lang 패키지에 소속된 클래스들은 패키지를 생략할 수 있다.
+		
+		System.out.println("Hello");
 		
 		//java.util 패키지의 Date클래스
 		// 1. java.util.Date

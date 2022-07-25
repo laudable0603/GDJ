@@ -6,6 +6,7 @@ public class Ex01_System {
 		
 		// 1. 타임스탬프 (item stamp) //중요
 		// 1970 -01 -01 0:00부터 1초마다 증가하는 long타입의 정수값
+		// 파일의 이름을 타입스탬프로 적용하면 중복값을 막는 용도로 사용할 수 있다.
 		long timestamp = System.currentTimeMillis();
 		
 		System.out.println(timestamp);
