@@ -34,7 +34,7 @@ public class Ex01_String {
 		boolean result1 = str1.equals(str2);
 		boolean result2 = str3.equals(str4);
 		
-		System.out.println(result1);
+		System.out.println("result1 : " + result1);
 		System.out.println(result2);
 		
 		if(str1.equals(str2)) {
