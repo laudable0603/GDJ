@@ -11,8 +11,8 @@ public class Ex01_String {
 		 
 		 */ //서로 같은값에 저장되는 방식
 		//참조값을 비교
-		String str1 = "hello";
-		String str2 = "hello";
+		String str1 = "hello";//0x123
+		String str2 = "hello";//0x123
 		
 		System.out.println(str1 == str2);//true
 		
@@ -24,8 +24,8 @@ public class Ex01_String {
 		 
 		 */ //서로 다른값에 저장되는 방식
 		
-		String str3 = new String ("hi");
-		String str4 = new String ("hi");
+		String str3 = new String ("hi");//0x456
+		String str4 = new String ("hi");//0x789
 		
 		System.out.println(str3 == str4);//false
 		
@@ -34,8 +34,8 @@ public class Ex01_String {
 		boolean result1 = str1.equals(str2);
 		boolean result2 = str3.equals(str4);
 		
-		System.out.println("result1 : " + result1);
-		System.out.println(result2);
+		System.out.println("result1 : " + result1);// 참
+		System.out.println(result2);//참
 		
 		if(str1.equals(str2)) {
 			System.out.println("str1, str2는 같아요");
