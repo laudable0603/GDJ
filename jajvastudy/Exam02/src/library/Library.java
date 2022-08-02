@@ -1,0 +1,109 @@
+package library;
+
+import java.util.Scanner;
+
+public class Library {
+	
+	private Scanner sc; // 객체의 선언
+	private Book[] books;
+	private int idx; //배열에 저장하기 위한 인덱스
+	
+	public Library() {
+		sc = new Scanner(System.in); //스캐너 객체 생성
+		books = new Book[100]; 
+		
+	}
+	
+	
+	private void addBook() {
+		 if(idx == books.length) {
+			System.out.println("더 이상 등록할 수 없습니다.");
+			return;			 
+		 }
+		//책등록
+		 System.out.println("+++++책등록+++++");
+		 System.out.print("등록하실 책을 입력해주세요 >>> ");
+		 String title = sc.next();
+		 System.out.print("저자 입력 >>> ");
+		 String author = sc.next();
+		 //책 배열에 등록하기
+		 Book book = new Book(idx + 1, title, author); //Book클래스에 있는 @@기능을 사용하기 위해 자동완성 기능 사용
+		 books[idx++] = book; //북에 들어온 idx값을 books배열값에 넣기위해 넣은 코드
+		 }
+		
+		 
+		 
+	 
+		 
+	
+	
+	private void removeBook() {
+		if(idx == 0) {
+			System.out.println("등록된 책이 한 권도 없습니다.");
+			return;
+		}
+		System.out.println("-----책삭제-----");
+		System.out.print("삭제할 책의 번호(1~" + idx + ") 를 입력하세요>>>  ");
+		int bookNo = sc.nextInt() -1;//책번호는 1~100사이지만 배열은 0~99이기에 -1을 붙여준다.
+		sc.nextLine();
+		if(bookNo < 0 || bookNo >= idx) {
+			System.out.println("책 번호가 " + (bookNo + 1) + "책은 없습니다.");
+			return;
+		}
+		System.arraycopy(books, bookNo + 1, books, bookNo, idx - bookNo - 1);		 //배열 전체를 비어있는 배열로 앞당기기
+		books[--idx] = null;														//배열을 옮기고 뒷쪽에 남아있는 배열들을 null값 초기값으로 바꾸어주기.
+		System.out.println("책 번호가 " + (bookNo + 1 ) + "인 책을 삭제했습니다.");
+		
+	}
+	
+	private void findBook() {
+		if(idx == 0) {
+			System.out.println("등록된 책이 한 권도 없습니다.");
+			return;
+		}
+		System.out.println("☆☆☆☆☆☆책조회☆☆☆☆☆☆");
+		System.out.print("조회할 책 제목 입력 >>> ");
+		String title = sc.next();
+		for (int i = 0; i < idx; i++) {
+			//저장된 책 제목 : 배열속 배열번호에 해당 배열에 들어가있는 getTitle
+			// 조회할 책 제목 : title
+			if(books[i].getTitle().equals(title)) {
+				System.out.println(books[i]);
+				return;  //findBook()메소드 종료				
+			}			
+		}
+		System.out.println("제목이" + title + "인 책은 없습니다.");
+	}
+	
+	private void printAllBooks() {
+		if(idx == 0) {
+			System.out.println("등록된 책이 한 권도 없습니다.");
+			return;
+		}
+		System.out.println("※※※※※※※전체목록※※※※※※※");
+		for(int i = 0; i < idx; i++) {//idx는 책 권수
+			System.out.println(books[i]);
+		}
+	}
+	
+	public void manage() {
+		
+		while(true) {
+			System.out.print("1. 추가 2. 삭제 3. 조회 4. 전체목록 0. 프로그램종료 >>>  ");
+			int choice = sc.nextInt();  //숫자먹어주는 역할
+			sc.nextLine();  //엔터먹어주는 역할 *불필요한 엔터 제거*
+			switch(choice){ //스캐너에서 들어온 초이스 번호로 위쪽 메소드를 실행시키는 법
+			
+			case 1: addBook(); break;
+			case 2: removeBook(); break;
+			case 3: findBook(); break;
+			case 4: printAllBooks();break;
+			case 0: System.out.println("Library 프로그램을 종료합니다. 감사합니다."); 
+					return; //magage 메소드 종료를 위한 리턴
+			default : System.out.println("알 수 없는 명령입니다. 다시 시도하세요");
+			}
+		}
+		
+	}
+	
+}
