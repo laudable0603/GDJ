@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
-    <fullyQualifiedTypeName name="java.util.Date"/>
-    <fullyQualifiedTypeName name="java.sql.Date"/>
-    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
-    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
-    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
-    <fullyQualifiedTypeName name="ex01_field.UserMain"/>
-    <fullyQualifiedTypeName name="ex01_field.User"/>
-    <fullyQualifiedTypeName name="ex02field.School"/>
-    <fullyQualifiedTypeName name="ex02field.Student"/>
     <fullyQualifiedTypeName name="ex03_method.Calculator"/>
     <fullyQualifiedTypeName name="ex04_method.VendingMachine"/>
     <fullyQualifiedTypeName name="ex05_method.Car"/>
@@ -56,8 +46,18 @@
     <fullyQualifiedTypeName name="ex09_upcasting.Student"/>
     <fullyQualifiedTypeName name="ex09_upcasting.Person"/>
     <fullyQualifiedTypeName name="quiz03_bus.Bus"/>
-    <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="quiz03_bus.Person"/>
     <fullyQualifiedTypeName name="quiz04_cart.Customer"/>
     <fullyQualifiedTypeName name="quiz04_cart.Product"/>
+    <fullyQualifiedTypeName name="ex10_downcasting.Person"/>
+    <fullyQualifiedTypeName name="ex10_downcasting.Student"/>
+    <fullyQualifiedTypeName name="ex10_downcasting.Alba"/>
+    <fullyQualifiedTypeName name="ex11_downcasting.Car"/>
+    <fullyQualifiedTypeName name="sun.net.www.content.text.plain"/>
+    <fullyQualifiedTypeName name="ex11_downcasting.Hybrid"/>
+    <fullyQualifiedTypeName name="ex12_object_class.Person"/>
+    <fullyQualifiedTypeName name="ex13_abstract.Shape"/>
+    <fullyQualifiedTypeName name="ex13_abstract.Circle"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="quiz06_game.GameUnit"/>
 </qualifiedTypeNameHistroy>
