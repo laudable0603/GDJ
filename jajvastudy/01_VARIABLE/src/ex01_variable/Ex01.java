@@ -4,7 +4,7 @@ public class Ex01 {
 
 	public static void main(String[] args) {
 		
-		// single comment - 한 줄 짜리 주석(설명)
+		// single comment - 한 줄 짜리 주석(설명) 'CTRL + /'대체 가능
 		/*
 		 * multiple comment 
 		 * 여러 줄의 주석

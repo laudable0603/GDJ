@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="ex08_override.Circle"/>
-    <fullyQualifiedTypeName name="ex08_override.Rectangle"/>
-    <fullyQualifiedTypeName name="java.lang.Readable"/>
-    <fullyQualifiedTypeName name="ex08_override.Square"/>
-    <fullyQualifiedTypeName name="quiz01_coffee.Americano"/>
-    <fullyQualifiedTypeName name="quiz02_coffe.Espresso"/>
-    <fullyQualifiedTypeName name="quiz02_coffe.Coffee"/>
-    <fullyQualifiedTypeName name="quiz02_coffee.Espresso"/>
-    <fullyQualifiedTypeName name="quiz01_coffee.Espresso"/>
-    <fullyQualifiedTypeName name="ex09_upcasting.Alba"/>
-    <fullyQualifiedTypeName name="ex09_upcasting.Student"/>
-    <fullyQualifiedTypeName name="ex09_upcasting.Person"/>
-    <fullyQualifiedTypeName name="quiz03_bus.Bus"/>
     <fullyQualifiedTypeName name="quiz03_bus.Person"/>
     <fullyQualifiedTypeName name="quiz04_cart.Customer"/>
     <fullyQualifiedTypeName name="quiz04_cart.Product"/>
@@ -43,7 +30,6 @@
     <fullyQualifiedTypeName name="quiz07_song.Singer"/>
     <fullyQualifiedTypeName name="quiz07_song.Song"/>
     <fullyQualifiedTypeName name="quiz07_song.Producer"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="javax.swing.event.SwingPropertyChangeSupport"/>
     <fullyQualifiedTypeName name="quiz08_schedule.WeekScheduler"/>
     <fullyQualifiedTypeName name="quiz08_schedule.Day"/>
@@ -53,11 +39,25 @@
     <fullyQualifiedTypeName name="com.sun.tools.jdeps.JdepsConfiguration.Builder"/>
     <fullyQualifiedTypeName name="java.lang.Boolean"/>
     <fullyQualifiedTypeName name="ex04_builder.User.Builder"/>
+    <fullyQualifiedTypeName name="lombok.Builder"/>
+    <fullyQualifiedTypeName name="ex05_lombok.User"/>
+    <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+    <fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
+    <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="com.sun.tools.jdeprscan.scan.Scan"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="java.lang.IncompatibleClassChangeError"/>
+    <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
+    <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
     <fullyQualifiedTypeName name="lombok.Getter"/>
     <fullyQualifiedTypeName name="lombok.Setter"/>
-    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
-    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
-    <fullyQualifiedTypeName name="lombok.Builder"/>
     <fullyQualifiedTypeName name="lombok.ToString"/>
-    <fullyQualifiedTypeName name="ex05_lombok.User"/>
+    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="parking.ParkingLot"/>
+    <fullyQualifiedTypeName name="parking.Car"/>
 </qualifiedTypeNameHistroy>
