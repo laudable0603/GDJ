@@ -17,3 +17,4 @@ public class Car {
 	private String carNo;//차량번호
 	private String model;//차량모델
 }
+

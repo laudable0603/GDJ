@@ -1,6 +1,9 @@
 package parking;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
+
+
 
 public class ParkingLot {
 	
@@ -18,11 +21,11 @@ public class ParkingLot {
 	}
 	
 	//추가 메소드
-	private void addCar() {
+	private void addCar() throws RuntimeException{
 		System.out.println("현재 등록된 차량 " + idx + "대");
-		if(idx == cars.length) {
-			System.out.println("더 이상 차량 등록이 불가능합니다.");
-			return;
+		if(idx == cars.length) { // 원래 exception으로 처리
+			throw new RuntimeException("더 이상 차량 등록이 불가능합니다.");
+			
 		}		
 		System.out.print("차량번호 입력 >>>  ");
 		String carNo = sc.nextLine().replace(" ", "");		
@@ -37,10 +40,9 @@ public class ParkingLot {
 	}
 	
 	//삭제 메소드
-	private void deleteCar() {
+	private void deleteCar() throws RuntimeException {
 		if(idx == 0) {
-			System.out.println("등록된 차량이 없습니다.");
-			return;
+			throw new RuntimeException("삭제할 차량이 없습니다.");
 		}
 		System.out.print("삭제할 차량 번호를 입력해주세요 >>> ");
 		String carNo = sc.nextLine().replace(" ", "");
@@ -57,10 +59,9 @@ public class ParkingLot {
 	}
 	
 	//전체조회 메소드
-	private void printAllCar() {
+	private void printAllCar()throws RuntimeException {
 		if (idx == 0) {
-			System.out.println("등록된 차량이 없습니다.");
-			return;
+			throw new RuntimeException("등록된 차량이 없습니다.");
 		}
 		System.out.println(name);
 		for(int i = 0; i < idx; i++) {
@@ -73,23 +74,29 @@ public class ParkingLot {
 	public void manage() {
 		
 		while(true) {
-			System.out.println("1.추가 2.삭제 3.전체 0.종료 >>> ");
-			int choice = sc.nextInt();//input오류 해결 
-			sc.nextLine();
-			
-			switch(choice) {
-			
-			case 1: addCar(); break;
-			case 2: deleteCar(); break;
-			case 3: printAllCar(); break;
-			case 0: System.out.println("주차 프로그램을 종료합니다.");
-					return;
-			default : System.out.println("존재하지 않는 메뉴입니다.");
-			
+			try {
+				System.out.println("1.추가 2.삭제 3.전체 0.종료 >>> ");
+				int choice = sc.nextInt();//input오류 해결 
+				sc.nextLine();
+				
+				switch(choice) {
+				
+				case 1: addCar(); break;
+				case 2: deleteCar(); break;
+				case 3: printAllCar(); break;
+				case 0: System.out.println("주차 프로그램을 종료합니다.");
+				return;
+				default : throw new RuntimeException("1, 2, 3, 0 중에서 입력해주세요");
+				
+				}
+			} catch (InputMismatchException e) {
+				sc.next();
+				System.out.println("처리명령은 정수로 입력해주세요");
+			} catch (RuntimeException e) {
+				System.out.println(e.getMessage());
 			}
+		
 		}
-		
-		
 	}
 	
 	
