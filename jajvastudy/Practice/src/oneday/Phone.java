@@ -18,12 +18,17 @@ public class Phone {
 //		"027778888"	"*****8888"
 		
 		String phone_number = "01033334444";
+		String result1 ="";
+		String result2 ="";
 		
 		for(int i = 0; i < phone_number.length() -4; i++) {
-			
-			
+			result1 += "*";			
 		}
 		
+		result2 = phone_number.substring(phone_number.length() -4 , phone_number.length());
+		result1 += result2;
+		System.out.println(phone_number);
+		System.out.println(result1);
 		
 		
 		
