@@ -31,11 +31,6 @@ public class Library {
 		 books[idx++] = book; //북에 들어온 idx값을 books배열값에 넣기위해 넣은 코드
 		 }
 		
-		
-		
-	    
-		
-	    
 	
 	private void removeBook() {
 		if(idx == 0) {
