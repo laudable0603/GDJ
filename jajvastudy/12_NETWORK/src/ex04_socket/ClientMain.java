@@ -43,6 +43,8 @@ public class ClientMain {
 			sc.close();
 
 		} catch (IOException e) {
+			
+			
 			e.printStackTrace();
 		} finally {
 			try {

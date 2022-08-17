@@ -52,6 +52,7 @@ public class ServerMain {
 				// 입출력 스트림 종료
 				in.close();
 				out.close();
+				
 
 				// 클라이언트 접속 종료
 				clientSocket.close();
