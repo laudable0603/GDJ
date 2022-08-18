@@ -8,7 +8,6 @@ INDEX VERSION 1.131+C:\GDJ\jajvastudy\.metadata\.plugins\org.eclipse.jdt.core
 4127804410.index
 3324777928.index
 3497965807.index
-3602031482.index
 1006848383.index
 740092244.index
 2413366716.index
