@@ -7,12 +7,10 @@ import java.net.Socket;
 
 public class Client extends Thread {
 
-	private Socket socket;
 	private BufferedReader in;
 
 	public Client(Socket socket) {
 		try {
-			this.socket = socket;
 			in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
 		} catch (IOException e) {
@@ -37,9 +35,6 @@ public class Client extends Thread {
 			try {
 				if (in != null) {
 					in.close();
-				}
-				if (socket.isClosed() == false) {
-					socket.close();
 				}
 
 			} catch (IOException e) {

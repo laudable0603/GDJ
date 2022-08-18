@@ -45,7 +45,7 @@ public class Server extends Thread{
 				}
 				// 모든 클라이언트에게 메시지 출력
 				 address = (InetSocketAddress)client.getRemoteSocketAddress();
-				 ServerMain.sendMessage(address.getHostName() + "의 메시지 : " + message);
+				 ServerMain.sendMessage(address.getHostName() + "의 메시지 : " + message + "\n");
 				
 				
 			}
