@@ -571,7 +571,7 @@ public class Main1_XML {
 	}
 	
 	public static void main(String[] args) {
-		m10();
+		m2();
 	}
 
 }
