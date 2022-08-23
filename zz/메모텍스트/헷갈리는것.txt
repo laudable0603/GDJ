@@ -1,0 +1,9 @@
+src: .java 파일을 저장함
+bin: .class파일을 저장함 > jvm으로 실행 할 수 있음 ex> .java> .class> jvm
+
+패키지 이름의 특성:
+class 이름은 충돌할 가능성이 높다. (간단하게 작성하고 패키지 이름을 3단으로 짓는다)
+패키지 이름은 com.hyun, kr.co.kia 식으로 회사 도메인 이름으로 짓는다. 
+무조건 소문자로 작성한다.
+
+https://docs.oracle.com/javase/8

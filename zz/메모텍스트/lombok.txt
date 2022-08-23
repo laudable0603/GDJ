@@ -1,0 +1,24 @@
+롬복
+이클립스에 설치해야함
+Geeter/Setter/Constructor 등을 쉽게 만들어 줌.
+
+
+*경로 중간에 한글/공백 이 포함되어있으면 이클립스가 실행되지 않으니
+영어로 ㄱㄱ
+
+
+설치과정
+1. 명령프롬프트 열기
+C:\Users\GDJ >cd c:\GDJ\installer\jar
+C:\GDJ\installer\jar > java -jar lombok-1.18.18.jar
+빨간 고추 화면 뜨면 파일찾기 eclipse.exe를 찾아서 선택 후 인스톨 누르면 됨
+
+
+제거과정
+이클립스 폴더 찾아 들어가 생성된 lombok.jar 삭제후 eclipse.ini 메모장 연 후
+메모장에서 -javaagent:C:\GDJ\installer\eclipse\lombok.jar 해당 줄 삭제
+
+적용과정
+클래스에 객체 생성 후 프로젝트 우클릭 > build path >configure ~ > 
+위쪽 Libraries 선택후classpath > Add External JARs... 선택 후 install 폴더에 넣어둔
+jar 파일 찾아 선택
