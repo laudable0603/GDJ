@@ -95,10 +95,7 @@ CREATE TABLE USER_TBL(
 );
 
   
-  
-  
-  
-  
+
   
   
   
