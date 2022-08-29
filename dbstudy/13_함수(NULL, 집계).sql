@@ -31,7 +31,30 @@ SELECT
   ORDER BY
         STU_NAME ASC;
 
-
-
+-- 이름과 총점을 조회하기
+-- 이름이 없으면 '아무개', 점수가 없으면 0점 처리
+-- 결과
+-- 아무개 300
+-- 영숙   200
+-- 정수   200
+-- 지영   200
+SELECT
+        NVL(NAME, '아무개') AS 이름
+      , NVL(KOR, 0)+ NVL(ENG, 0) + NVL(MATH, 0) AS 총점
+           
+   FROM
+        SAMPLE;
+  
+-- 2. NVL2 함수
+--    NVL2(칼럼, NULL이 아닐 때 사용할 값, NULL일 때 사용할 값)
+-- 같은 타입만 가능
+SELECT
+       NVL2(NAME, NAME || '님', '아무개')  -- NAME이 널값이 아니면 그대로 NAME을 쓰고 NULL이면 '아무개'
+       -- || : 자바의 +(연결) 
+     , NVL2(KOR, '응시', '결시')
+     , NVL2(ENG, '응시', '결시')
+     , NVL2(MATH, '응시', '결시')
+  FROM  
+        SAMPLE;
 
 
