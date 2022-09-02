@@ -33,7 +33,7 @@ SELECT EMPLOYEE_ID, FIRST_NAME, JOB_ID, SALARY
                    FROM EMPLOYEES
                   WHERE JOB_ID = 'IT_PROG');
                    
-  
+-- 
 
 
 -- 4. EMPLOYEE_ID가 115인 사원과 동일한 JOB_ID와 DEPARTMENT_ID를 가진 사원의 EMPLOYEE_ID, FIRST_NAME, JOB_ID, DEPARTMENT_ID를 조회하시오.
