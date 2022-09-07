@@ -30,7 +30,7 @@ public class UpdateMain {
 			Board board = new Board();
 			board.setBoard_no(board_no);
 			board.setContent(content);
-			
+/************************여기까지가 DTO*************************************/			
 			// Connection 생성
 			Class.forName("oracle.jdbc.OracleDriver");
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
