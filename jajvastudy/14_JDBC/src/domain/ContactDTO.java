@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
        , 데이터 저장 객체를 처리하는 영역으로 도메인(domain) 패키지로 처리
  */
 public class ContactDTO {
-	private int CONTACT_NO;
+	private int contact_no;
 	private String name;
 	private String tel;
 	private String email;
