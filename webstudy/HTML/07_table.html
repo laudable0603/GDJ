@@ -229,12 +229,126 @@
             </tr>
         </tbody>
     </table>
+    <!-- 
+        기타 테이블 관련 태그
 
+        1. <caption> 
+            1) <table> 태그의 하위 태그
+            2) 테이블의 제목을 작성할 수 있는 태그
+        2. <colgroup>
+            1) <thead>, <tbody>, <tfoot> 태그의 하위 태그
+            2) 열 단위로 스타일 작업을 수행할 수 있는 태그
+     -->
+     <table border="1">
+        <caption>테이블 제목</caption>
+        <tbody>
+            <colgroup>
+                <col style="background-color:brown;">
+                <col style="background-color: crimson;">
+                <col style="background-color: lime;">
+                <col style="background-color: teal;">
+            </colgroup>
+            <tr>
+                <td>AAAAA</td>
+                <td>BBBBB</td>                
+                <td>CCCCC</td>
+                <td>DDDDD</td>
+            </tr>
+            <tr>
+                <td>AAAAA</td>                
+                <td>BBBBB</td>
+                <td>CCCCC</td>
+                <td>DDDDD</td>
+            </tr>
+            <tr>
+                <td>AAAAA</td>
+                <td>BBBBB</td>
+                <td>CCCCC</td>
+                <td>DDDDD</td>
+            </tr>
+        </tbody>
+     </table>
+
+     <h1>연습 문제 04</h1>
+     <table border="1">
+        <caption>제주특별자치도 학교현황(2015 기준)</caption>
+        <thead>
+            <colgroup>
+            <col>
+            <col style="background-color: gold">
+            <col>
+            <col style="background-color: gold">
+            <col>
+            </colgroup>
+            <tr>
+                <th>구분</th>
+                <th>학교수</th>
+                <th>학급수</th>
+                <th>학생수</th>
+                <th>교원수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>유 치 원</th>
+                <td>117</td>
+                <td>252</td>
+                <td>5,547</td>
+                <td>474</td>
+            </tr>
+            <tr>
+                <th>합계</th>
+                <td>300</td>
+                <td>3,437</td>
+                <td>86,954</td>
+                <td>6,111</td>
+            </tr>           
+        </tbody>
+     </table>
+
+     <h1>연습 문제 05</h1>
+     <table border="1">
+        <caption>우리펜션 객실안내</caption>
+        <thead>
+            <tr style="background-color: gold">
+                <th>방 이름</th>
+                <th>고객구분</th>
+                <th>정원</th>
+                <th>가격</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>콜로라도</th>
+                <td>여성 전용</td>
+                <td rowspan="3">4인실</td>
+                <td rowspan="4">100,000원</td>
+            </tr>
+            <tr>
+                <th rowspan="2">아레나도</th>
+                
+                <td>가족용</td>
+            </tr>
+            <tr>
+                <td>커플용</td>
+            </tr>
+            <tr>
+                <th>엘레나</th>
+                <td>커플 전용</td>
+                <td>2인실</td>
+            </tr>
+           
+        </tbody>
+       <tfoot>
+        <th colspan="4" style="background-color: gold">6월 15일까지 전 객실 50% 할인</th>
+       </tfoot>
+     </table>
 
      <hr>
      <h1>리뷰</h1>
      <!-- 내가 만든 테이블 -->
      <table border="1">
+        <caption>테이블 제목은 caption태그 사용</caption>
         <thead>
             <tr bgcolor="skybule">
                 <th width="100">주제</th>
