@@ -211,22 +211,22 @@
     <p>
       <form action="https://www.w3schools.com/action_page.php" method="post" target="_blank">
         <label for="id"><strong>아이디</strong></label><br />
-        <input type="text" id="id" name="id" placeholder="아이디" required/><br />
+        <input type="text" id="id" name="id" placeholder="                         @naver.com" minlength="5" maxlength="20" required/><br />
 
         <label for="pw"><strong>비밀번호</strong></label><br />
-        <input type="password" id="pw" name="pw" placeholder="비밀번호" required/><br />
+        <input type="password" id="pw" name="pw" placeholder="비밀번호" minlength="8" maxlength="16" required/><br />
 
                 
         <label for="rpw"><strong>비밀번호 재확인</strong></label><br/>
-        <input type="password" id="rpw" name="rpw" placeholder="비밀번호 재확인" required><br/><br/>
+        <input type="password" id="rpw" name="rpw" placeholder="비밀번호 재확인" minlength="8" maxlength="16" required><br/><br/>
 
         <label for="name"><strong>이름</strong></label><br/>
         <input type="text" id="name" name="name" placeholder="이름" required><br/>
 
         <label for="bday"><strong>생년월일</strong></label><br/>
-        <input type="text" id="bday" name="bday" size="5" maxlength="4" placeholder="년(4자리)" required>
-        <select name="bday">
-            <option value="">월</option>
+        <input type="text" id="bday" name="bday" size="5" minlength="4" maxlength="4" min="1500"  placeholder="년(4자리)" required>
+        <select name="bday" required>
+            <option value="">월</option>    
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -240,15 +240,15 @@
             <option value="11">11</option>
             <option value="12">12</option>
         </select>
-        <input type="text" name="bday" size="4" maxlength="2" placeholder="일"><br/>
+        <input type="text" name="bday" size="4" maxlength="2" placeholder="일" min="1" max="31" required><br/>
         <label for="gender"><strong>성별</strong></label><br/>
         <select name="gender" id="gender">
             <option value="1">남자</option>
             <option value="2">여자</option>
-            <option value="" selected>선택안함</option>
+            <option value="3" selected>선택안함</option>
         </select> <br/><br/>
 
-        <label for="email"><strong>본인 확인 이메일</strong><small>(선택)</small><br/>
+        <label for="email"><strong>본인 확인 이메일</strong><span style="color: gray"><small>(선택)</small></span><br/>
         </label><input type="text" id="email" name="userId" placeholder="아이디">
         @
         <input type="text" list="domains" name="domain" placeholder="선택 또는 입력">
@@ -267,9 +267,10 @@
             <option>감비아 +220</option>
             <option selected>대한민국 +82</option>
         </select>
-        <input type="text" maxlength="13" name="tel" id="tel" placeholder="전화번호 입력">
-        <input type="button" value="인증번호 받기" onclick="alert('메시지를 확인해 주세요')"> <br/>
-        <input type="text" maxlength="6" name="cert" placeholder="인증번호 입력">
+        <input type="text" maxlength="13" name="tel" id="tel" placeholder="전화번호 입력" required>
+        <input type="button" value="인증번호 받기" onclick="alert('메시지를 확인해 주세요')" required> <br/>
+        <input type="text" maxlength="6" name="cert" placeholder="인증번호 입력" required>
+        <button style="background-color: rgb(4, 255, 4)">가입하기</button>
 
       </form>
     <hr>
@@ -277,15 +278,24 @@
     <!-- 네이버 검색 -->
     <p>
     <h3>네이버 검색</h3>
-      <form action="https://search.naver.com/search.naver" target="_blank" >
-        <input type="search" placeholder="네이버 검색" name="query">
-        <input type="submit" value="검색">
+      <form action="https://search.naver.com/search.naver" method="get" target="_blank" >
+        <!-- hidden -->
+        <input type="hidden" name="where" value="nexearch">
+        <input type="hidden" name="sm" value="top_hty">
+        <input type="hidden" name="fbm" value="1">
+        <input type="hidden" name="ie" value="utf-8">
+        <input type="text" name="query" placeholder="네이버 검색" >
+        <button>검색</button>
       </form>
     </p>
     <!-- 다음 검색 -->
     <p>
     <h3>다음 검색</h3>
-    <form action="https://search.daum.net/search" target="_blank">
+    <form action="https://search.daum.net/search" method="get" target="_blank">
+        <input type="hidden" name="nil_suggest" value="btn">
+        <input type="hidden" name="w" value="tot">
+        <input type="hidden" name="DA" value="YZR">
+        <input type="hidden" name="t_nil_searchbox" value="btn">
         <input type="text" placeholder="다음 검색" name="q">
         <button>검색</button>
     </form>
