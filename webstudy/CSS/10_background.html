@@ -89,17 +89,24 @@
       .box9:active {
         background-image: url(../../images/eiffeltower.jpg);
       }
+      .img_main {
+        box-sizing: border-box;
+        width: 720px;
+        height: 480px;
+        margin: 0 auto;
+        background-color: rgb(219, 120, 38);
+      }
       .img_box {
         box-sizing: border-box;
-        width: 640px;
-        height: 480px;
+        width: 100%;
+        height: 80%;
         background-image: url(../../images/eiffeltower.jpg);
         background-size: 100% 100%;
         margin: 0 auto;
       }
       .img_desc {
         box-sizing: border-box;
-        width: 640px;
+        width: 100%;
         margin: 20px auto;
         padding: 10px 0; /*height 없이 상하 padding을 통해 세로 가운데 정렬*/
         background-color: aquamarine;
@@ -151,8 +158,9 @@
 
     <hr />
 
-    <div class="img_box"></div>
-
-    <div class="img_desc">에펠탑</div>
+    <div class="img_main">
+      <div class="img_box"></div>
+      <div class="img_desc">에펠탑</div>
+    </div>
   </body>
 </html>
