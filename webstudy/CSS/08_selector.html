@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 1. 태그 선택자 */
+      h1 {
+        color: teal;
+      }
+      /* 2. 클래스 선택자 */
+      .box {
+        color: blue;
+      }
+      /* 3. id 선택자 */
+      #hello {
+        color: rgb(17, 0, 255);
+      }
+      /* 4. 자식 선택자 <ul의 자식 li>*/
+      ul > li {
+        color: orange;
+      }
+      /* 후손 선택자 ul의 자식의 li자식 a */
+      ul > li > a {
+        text-decoration: none;
+        color: red;
+      }
+      /* 5. 후손 선택자 */
+      dl strong {
+        color: purple;
+      }
+      /* 6. 모든 형제 */
+      .asia > h3 ~ div {
+        color: yellowgreen;
+      }
+      /* 7. 인접 형제 */
+      .europe > h3 + div {
+        color: navy;
+      }
+      /* 
+            8. 구조 선택자
+                1) first-of-type 첫 번째 요소
+                2) laut-of-type 마지막 요소
+                3) nth-of-type(n) n번째 요소
+        */
+      h4 + ol > li:nth-of-type(2) {
+        color: aqua;
+        font-weight: 900;
+        font-size: 16px;
+      }
+      /*
+            9. 속성 선택자 
+                1) 요소[속성]        속성을 가진 요소  - 자주 사용
+                2) 요소[속성=값]     속성=값인 요소  -  자주 사용
+                3) 요소[속성^=값]    속성이 값으로 시작하는 요소
+                4) 요소[속성$=값]    속성이 값으로 끝나는 요소  -> img[src&=jpg] jpg로 끝나는 이미지 선택등으로 이용가능
+                5) 요소[속성*=값]    속성이 값을 포함하는 요소
+        */
+      /* placeholder 속성을 가진 input */
+      form > input[placeholder] {
+        color: darkgreen;
+      }
+      form > input[type="password"] {
+        background-color: dimgray;
+      }
+      /* 
+            10. 마우스 반응 선택자
+                1) hover  : 마우스를 가져다 대는 동안
+                2) active : 마우스를 누르고 있는 동안
+                *둘 다 사용시 순서 지키기*
+        */
+      .link:hover {
+        color: orangered;
+      }
+      .link:active {
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 태그 -->
+    <h1>hello CSS</h1>
+
+    <hr />
+    <!-- 클래스 -->
+    <div class="box">Nice to meet you</div>
+
+    <hr />
+    <!-- id -->
+    <div id="hello">How are you?</div>
+
+    <hr />
+
+    <ul>
+      <!-- 자식 -->
+      <li>
+        <!-- 후손 -->
+        <a href="01_internal.html" target="_blank">01_internal</a>
+      </li>
+      <li>
+        <a href="02_external.html" target="_blank">02_external</a>
+      </li>
+      <li>
+        <a href="03_inline.html" target="_blank">03_inline</a>
+      </li>
+    </ul>
+
+    <!-- dl strong   dl과 strong 사이에 공백을 넣으면 후손이 선택 -->
+    <dl>
+      <dt>
+        <strong>이름</strong>
+      </dt>
+      <dd>진라면</dd>
+      <dt>
+        <strong>조리법</strong>
+      </dt>
+      <dd>4분간 끓인다.</dd>
+    </dl>
+
+    <!-- .asia > h3 ~ div      <-h3의 div들 -->
+    <div class="asia">
+      <h3>아시아</h3>
+      <div>한국</div>
+      <div>일본</div>
+      <div>중국</div>
+    </div>
+
+    <!-- .europe > h3 + div    <-영국 -->
+    <div class="europe">
+      <h3>유럽</h3>
+      <div>영국</div>
+      <div>프랑스</div>
+      <div>독일</div>
+    </div>
+
+    <!-- h4 + ol > li:nth-of-type(2)    <-냉면 -->
+    <h4>오늘 먹을 점심 메뉴</h4>
+    <ol>
+      <li>돈까스</li>
+      <li>냉면</li>
+      <li>김치찌개</li>
+      <li>두루치기</li>
+    </ol>
+
+    <!-- form > input[placeholder]   <- 첫번째 인풋 -->
+    <!-- form > input[type="password"]    <- 두번째 인풋 -->
+    <form>
+      <input type="text" name="id" placeholder="ID" /><br />
+      <input type="password" name="pw" maxlength="20" />
+    </form>
+
+    <hr />
+
+    <a class="link" href="javascript:void(0)">클릭</a>
+
+    <style>
+      /* 
+            11. 상태 선택자
+                1) :focus    선택했을 때
+                2) :checked  체크했을 때
+        */
+      #name:focus {
+        background-color: rgb(225, 243, 240);
+      }
+      .register > div > input[name="gender"]:checked + label {
+        font-weight: 900;
+      }
+    </style>
+
+    <form class="register">
+      <div>
+        <label for="name">성명</label>
+        <input type="text" id="name" />
+      </div>
+      <div>
+        <input type="radio" name="gender" value="1" id="male" />
+        <label for="male">남자</label>
+        <input type="radio" name="gender" value="2" id="female" />
+        <label for="female">여자</label>
+      </div>
+    </form>
+  </body>
+</html>

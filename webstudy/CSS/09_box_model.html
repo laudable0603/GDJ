@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .box1 {
+        width: 100px;
+        height: 100px;
+        background-color: greenyellow;
+      }
+      .box2 {
+        /* 인라인 요소는  (span, a등)는 너비/높이 적용 불가*/
+        width: 100px;
+        height: 100px;
+        background-color: green;
+      }
+    </style>
+    <div class="box1">BOX</div>
+    <span class="box2">BOX2</span>
+
+    <hr />
+
+    <style>
+      .wrap {
+        /* 부모 */
+        width: 200px;
+        height: 200px;
+        background-color: rgb(56, 159, 250);
+      }
+      .wrap > .box3 {
+        /* 자식 : %의 기준은 부모의 크기 */
+        width: 50%;
+        height: 50%;
+        background-color: pink;
+      }
+      .box4 {
+        /* 자식 : %의 기준은 부모의 크기 */
+        width: 25%;
+        height: 25%;
+        background-color: blueviolet;
+      }
+    </style>
+    <div class="wrap">
+      <div class="box3">BOX3</div>
+      <div class="box4">BOX4</div>
+    </div>
+
+    <hr />
+
+    <style>
+      .box5 {
+        /* 테두리 두께 */
+        border-width: 1px;
+        /* 테두리 종류 */
+        border-style: solid;
+        /* 테두리 색상 */
+        border-color: rgb(0, 0, 0);
+        /* 단축 속성 */
+        border: 2px dashed red;
+        /* 방향 선택 */
+        border-bottom: 3px double blue;
+      }
+    </style>
+    <div class="box5">BOX5</div>
+
+    <hr />
+    <style>
+      .box6 {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        /* 모서리 곡률  곡률값은 시계방향으로 돈다*/
+        border-radius: 5px; /*좌상5 우상5 우하5 좌하5*/
+        border-radius: 10px 0; /*좌상10 우상0 우하10 좌하0*/
+        border-radius: 20px 0 20px; /*좌상20 우상0 우하20 좌하0*/
+        border-radius: 5px 10px 15px 20px; /*좌상5 우상10 우하15 좌하20*/
+      }
+    </style>
+    <div class="box6">BOX6</div>
+
+    <hr />
+
+    <style>
+      .box7 {
+        border: 1px solid black;
+        /* 내부 여백 : content와 border 사이 공간 */
+        padding: 0; /*상0 우0 하0 좌0*/
+        padding: 10px 20px; /*상10 우20 하10 좌20*/
+        padding: 20px 0px 20px; /*상20 우0 하20 좌0*/
+        padding: 5px 10px 15px 20px; /*상5 우10 하15 좌20*/
+      }
+    </style>
+    <div class="box7">BOX7</div>
+  </body>
+</html>
