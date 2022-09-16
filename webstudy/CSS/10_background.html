@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        box-sizing: border-box;
+        border: 1px solid gray;
+      }
+      /* 그림이 패턴화 되어있다. */
+      /* 박스크기 = 이미지 크기 */
+      .box1 {
+        width: 100px;
+        height: 76px;
+        background-image: url(../../images/attach.png);
+        background-size: 100px 76px; /*너비px 높이px 순*/
+      }
+      /* 박스크기 > 이미지 */
+      .box2 {
+        width: 200px;
+        height: 152px;
+        background-image: url(../../images/attach.png);
+        background-repeat: repeat; /* 디폴트 */
+      }
+      /* 박스크기 > 이미지 경우 패턴제거,포지션 센터*/
+      .box3 {
+        width: 200px;
+        height: 152px;
+        background-image: url(../../images/attach.png);
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      /* 박스 < 이미지 */
+      .box4 {
+        width: 50px;
+        height: 38px;
+        background-image: url(../../images/attach.png);
+        background-position: center;
+      }
+      /* 박스 < 이미지 패턴제거, 너비/높이 중 작은 값에 맞춘다.*/
+      .box5 {
+        width: 100px;
+        height: 38px;
+        background-image: url(../../images/attach.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      /* 박스 < 이미지 패턴제거, 너비/높이 중 큰 값에 맞춘다.*/
+      .box6 {
+        width: 100px;
+        height: 38px;
+        background-image: url(../../images/attach.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .box7 {
+        width: 140px;
+        height: 120px;
+        background-image: url(../../images/logos.png);
+        background-position: left -590px top -190px;
+      }
+      /* 박스크기로 %배율 */
+      .box8 {
+        width: 960px;
+        height: 640px;
+        background-image: url(../../images/eiffeltower.jpg);
+        background-size: 100% 100%;
+        background-blend-mode: multiply;
+        background-color: coral;
+      }
+      .box9 {
+        width: 1280px;
+        height: 960px;
+        background-image: url(../../images/hooray.jpg);
+        background-size: 100% 100%;
+        border: 10px solid gray;
+        border-radius: 30px;
+        margin: 0 auto;
+
+        font-size: 80px;
+        font-weight: 700;
+        color: aliceblue;
+        text-align: center;
+        padding-top: 350px;
+      }
+      .box9:active {
+        background-image: url(../../images/eiffeltower.jpg);
+      }
+      .img_box {
+        box-sizing: border-box;
+        width: 640px;
+        height: 480px;
+        background-image: url(../../images/eiffeltower.jpg);
+        background-size: 100% 100%;
+        margin: 0 auto;
+      }
+      .img_desc {
+        box-sizing: border-box;
+        width: 640px;
+        margin: 20px auto;
+        padding: 10px 0; /*height 없이 상하 padding을 통해 세로 가운데 정렬*/
+        background-color: aquamarine;
+        border: 5px solid royalblue;
+        border-radius: 15px;
+        font-weight: 700;
+        font-size: 30px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+
+    <hr />
+
+    <div class="box2"></div>
+
+    <hr />
+
+    <div class="box3"></div>
+
+    <hr />
+
+    <div class="box4"></div>
+
+    <hr />
+
+    <div class="box5"></div>
+
+    <hr />
+
+    <div class="box6"></div>
+
+    <hr />
+
+    <div class="box7"></div>
+
+    <hr />
+
+    <div class="box8"></div>
+
+    <hr />
+
+    <div class="box9">
+      가라는 회사는 안 가고<br />
+      이래도 되나 싶다.
+    </div>
+
+    <hr />
+
+    <div class="img_box"></div>
+
+    <div class="img_desc">에펠탑</div>
+  </body>
+</html>
