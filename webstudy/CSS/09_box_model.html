@@ -20,7 +20,7 @@
         background-color: green;
       }
     </style>
-    <div class="box1">BOX</div>
+    <div class="box1">BOX1</div>
     <span class="box2">BOX2</span>
 
     <hr />
@@ -153,5 +153,29 @@
     </style>
 
     <div class="box10">BOX10</div>
+
+    <hr />
+    <style>
+      .box11 {
+        border: 1px solid black;
+        /* 세로 가운데 정렬 - 1 : padding*/
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+    </style>
+    <div class="box11">BOX11</div>
+
+    <hr />
+    <style>
+      .box12 {
+        border: 1px solid black;
+        /* 세로 가운데 정렬 -2 : line-height -height값이 정해져 있을 때 사용
+        height값과 line-height값을 같게 맞추어 준다 텍스트가 두 줄 이상인 경우는
+        사용 x*/
+        height: 50px;
+        line-height: 50px;
+      }
+    </style>
+    <div class="box12">BOX12</div>
   </body>
 </html>
