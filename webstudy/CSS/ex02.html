@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css);
+      * {
+        box-sizing: border-box; /* width/height가 실제 크기가 됨 */
+        font-family: "Noto Sans KR", sans-serif;
+        padding: 0;
+        margin: 0;
+      }
+      .main_section {
+        display: flex;
+        width: 500px;
+        height: 100px;
+      }
+      .left_section {
+        border: 1px solid gray;
+        width: 75%;
+      }
+      .right_section {
+        border: 1px solid gray;
+        width: 25%;
+      }
+      article {
+        margin: 10px 5px;
+        display: flex;
+      }
+      .backgroud {
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" method="post">
+      <section class="main_section">
+        <section class="left_section">
+          <article>
+            <div class="backgroud"><i class="fa-solid fa-user"></i></div>
+            <div>
+              <input type="text" name="username" placeholder="Username" />
+            </div>
+          </article>
+          <article>
+            <div class="backgroud"><i class="fa-solid fa-key"></i></div>
+            <input type="password" name="userpw" placeholder="●●●●" />
+          </article>
+        </section>
+        <section class="right_section"><button>로그인</button></section>
+      </section>
+    </form>
+  </body>
+</html>
