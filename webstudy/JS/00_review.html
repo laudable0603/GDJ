@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="box1"></div>
+    <script>
+      /*
+            테이블 이용
+                    c1  c2 c3
+            row =1   1  2  3
+            row =2   4  5  6
+            row =3   7  8  9
+            row =4   *  0  #
+            -----------------
+            1 ~ 9 : (row -1) * 3 + col
+        */
+      var table = '<table border="1"><tbody>';
+      for (let row = 1; row <= 4; row++) {
+        table += "<tr>";
+        for (let col = 1; col <= 3; col++) {
+          var data = (row - 1) * 3 + col;
+          switch (data) {
+            case 10:
+              table += "<td>*</td>";
+              break;
+            case 11:
+              table += "<td>0</td>";
+              break;
+            case 12:
+              table += "<td>#</td>";
+              break;
+            default:
+              table += "<td>" + data + "</td>";
+          }
+        }
+        table += "</tr>";
+      }
+      table += "</tbody></table>";
+      document.getElementById("box1").innerHTML = table;
+    </script>
+
+    <div id="div1" style="visibility: hidden">
+      <div>평균 : <span id="ave"></span>점</div>
+      <div>학점 : <span id="grd"></span></div>
+    </div>
+
+    <script>
+      var a = confirm("학점 계산을 진행할까요?");
+      if (a) {
+        func1();
+      }
+      function func1() {
+        document.getElementById("div1").style = 'style="visibility: visible"';
+        //입력
+        var kor = Number(prompt("국어 점수를 입력해주세요"));
+        var eng = Number(prompt("영어 점수를 입력해주세요"));
+        var mat = Number(prompt("수학 점수를 입력해주세요"));
+
+        //평균
+        var ave = (kor + eng + mat) / 3;
+
+        //학점
+        var grade;
+        switch (true) {
+          case ave >= 90:
+            grade = "A";
+            break;
+          case ave >= 80:
+            grade = "B";
+            break;
+          case ave >= 70:
+            grade = "C";
+            break;
+          case ave >= 60:
+            grade = "D";
+            break;
+          default:
+            grade = "F";
+        }
+
+        document.getElementById("ave").textContent = ave;
+        document.getElementById("grd").textContent = grade;
+      }
+    </script>
+    <script>
+      // start 함수 5 번 호출하여 console로그에 호출
+      // 첫 번째 인수 : 수행할 횟수
+      // 두 번째 인수 : 수행할 함수
+
+      //함수 정의
+      function start(count, a) {
+        for (let n = 0; n < count; n++) {
+          a();
+        }
+      }
+      //함수 호출
+      start(5, function () {
+        console.log("안녕하세요");
+      });
+    </script>
+  </body>
+</html>
