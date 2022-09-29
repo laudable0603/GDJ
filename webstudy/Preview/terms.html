@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>약관페이지</title>
+    <style>
+      a {
+        text-decoration: none;
+      }
+      div {
+        display: block;
+      }
+      form {
+        display: block;
+        margin-top: 0em;
+      }
+      h1 {
+        display: block;
+        font-size: 2em;
+        margin-block-start: 0.67em; /*1배 = 1em = 100%를 의미함*/
+        margin-block-end: 0.67em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+      }
+      h2 {
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+      }
+      .join_wrap > .join_header {
+        height: 89px;
+        border-bottom: 1px solid #dfe2e6;
+        text-align: center;
+      }
+      .join_wrap > .join_header a {
+        display: inline-block;
+        overflow: hidden; /*이미지가 박스를 초과하면 이미지 칸에맞춰 자르기*/
+        width: 140px;
+        height: 36px;
+        margin-top: 28px;
+        background: url(https://img2.tmon.kr/resources/shared/p/im/membership/sp-membership.png?v=20220818104529)
+          no-repeat;
+        background-position: 0 0;
+        font-size: 0; /*글자크기 0 색상 투명색을 줘서 드래그시 글자 안보이게 및 오류 제거*/
+        color: transparent; /*투명색*/
+      }
+      .join_contain.join_term {
+        width: 500px;
+        margin: 0 auto;
+      }
+      .join_contain .join_title {
+        margin: 50px 0 0 0;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 32px;
+        color: #000;
+        letter-spacing: -0.43px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="join_wrap">
+      <div class="join_header">
+        <h1 class="logo">
+          <a href="">TMON</a>
+        </h1>
+      </div>
+      <div class="join_contain join_term">
+        <h2 class="join_title">이용약관 동의</h2>
+      </div>
+    </div>
+  </body>
+</html>
