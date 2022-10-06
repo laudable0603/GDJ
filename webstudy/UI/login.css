@@ -1,0 +1,76 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;/*박스들이 실제 크기를 가지게 하기위해*/
+}
+a {
+    text-decoration: none;
+    color: #222;    
+}
+
+.container {
+    width: 460px;
+    margin: 0 auto;
+    
+}
+header{
+    text-align: center; /*인라인요소 좌우 정렬( a링크 가운데 정렬하기 위해)*/
+    padding: 100px 0 50px; /*헤더의 패딩값 위 100px 아래 50px을 줘 a링크의 위 아래 조절을 하였다.*/
+}
+.gubun{
+    margin-bottom: 5px;
+}
+.gubun_desc{
+    font-weight: 900;
+
+}
+.input_area input{
+    width: 100%; /*인풋박스 좌우크기 -부모의 크기를 받음*/
+    height: 50px;
+    padding: 0 10px;/*인풋박스 양옆 간격*/
+    margin-bottom: 5px;/*인풋박스 아래 간격*/
+    border: 2px solid #007700; /*인풋박스 테두리*/
+    outline: none;/*인풋박스 포커스 테두리*/
+}
+.input_area input:focus{
+    border:2px solid #ff8800;
+}
+.btn_signin{/*버튼 클래스*/
+    width: 100%;
+    height: 60px;
+    margin: 15px 0;
+    background-color: #007700;
+    color: #ffffff;
+    font-weight: 900;
+    text-align: center;/*텍스트 좌우 정렬*/
+    line-height: 60px; /*텍스트 상하 정렬 높이랑 똑같이 맞춘다*/
+    border: none;/*테두리*/
+    font-size: 20px;
+}
+footer{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /*박스들 사이에 공백을 주어서 쏠림현상 방지*/
+    text-align: center;
+}
+.join, .find{
+    width: 49%;
+}
+.title{
+    font-size: 12px;
+    font-weight: bold;
+}
+.desc{
+    font-size: 10px;
+    color: #777;
+}
+.btn_footer{ /*a링크 작업*/
+    display: block;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #007777;
+    color: #ffffff;
+    margin: 10px auto;
+}
