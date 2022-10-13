@@ -1,11 +1,15 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;/*박스들이 실제 크기를 가지게 하기위해*/
+    box-sizing: border-box;
+    font-family: "Malgun Gothic", sans-serif;
 }
 a {
     text-decoration: none;
-    color: #222;    
+    color: #000;    
+}
+body{
+    background-color:#F5F6F7;
 }
 
 .container {
@@ -14,8 +18,8 @@ a {
     
 }
 header{
-    text-align: center; /*인라인요소 좌우 정렬( a링크 가운데 정렬하기 위해)*/
-    padding: 100px 0 50px; /*헤더의 패딩값 위 100px 아래 50px을 줘 a링크의 위 아래 조절을 하였다.*/
+    text-align: center; 
+    padding: 100px 0 50px; 
 }
 .gubun{
     margin-bottom: 5px;
@@ -25,33 +29,36 @@ header{
 
 }
 .input_area input{
-    width: 100%; /*인풋박스 좌우크기 -부모의 크기를 받음*/
+    width: 100%; 
     height: 50px;
-    padding: 0 10px;/*인풋박스 양옆 간격*/
-    margin-bottom: 5px;/*인풋박스 아래 간격*/
-    border: 2px solid #007700; /*인풋박스 테두리*/
-    outline: none;/*인풋박스 포커스 테두리*/
+    padding: 0 10px;
+    margin-bottom: 5px;
+    border: 2px solid #00FF00; 
+    outline: none;
 }
 .input_area input:focus{
-    border:2px solid #ff8800;
+    border:2px solid #FF8800;
 }
-.btn_signin{/*버튼 클래스*/
+.btn_signin{
     width: 100%;
     height: 60px;
     margin: 15px 0;
-    background-color: #007700;
+    background-color: #00FF00;
     color: #ffffff;
     font-weight: 900;
-    text-align: center;/*텍스트 좌우 정렬*/
-    line-height: 60px; /*텍스트 상하 정렬 높이랑 똑같이 맞춘다*/
-    border: none;/*테두리*/
+    text-align: center;
+    line-height: 60px; 
+    border: none;
     font-size: 20px;
+}
+.btn_signin:hover{
+    cursor: pointer;
 }
 footer{
     margin-top: 30px;
     width: 100%;
     display: flex;
-    justify-content: space-between; /*박스들 사이에 공백을 주어서 쏠림현상 방지*/
+    justify-content: space-between; 
     text-align: center;
 }
 .join, .find{
@@ -65,7 +72,7 @@ footer{
     font-size: 10px;
     color: #777;
 }
-.btn_footer{ /*a링크 작업*/
+.btn_footer{ 
     display: block;
     width: 200px;
     height: 50px;

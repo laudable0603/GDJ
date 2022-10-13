@@ -67,7 +67,7 @@ public class UploadServlet extends HttpServlet {
 		String filesystemName = multipartRequest.getFilesystemName("filename"); // 저장된 이름
 		File file = multipartRequest.getFile("filename");
 		long size = file.length();// 파일 크기(바이트)
-		String strSize = new DecimalFormat("#, ##0").format(size);
+		String strSize = new DecimalFormat("#, ##0").format(size/1024);
 		long lastModified = file.lastModified(); // 파일 최종 수정일(타임스탬프)
 		String strLastModified = new SimpleDateFormat("yyyy-MM-dd a h:mm").format(new Date(lastModified));
 		
@@ -79,6 +79,7 @@ public class UploadServlet extends HttpServlet {
 		out.println("<h3>저장 파일명 : " + filesystemName + "</h3>");
 		out.println("<h3>파일 크기 : " + strSize + "KB</h3>");
 		out.println("<h3>최종 수정일 : " + strLastModified + "</h3>");
+		out.println("<a href=\"/01_Servlet/FileListServlet\">파일목록</a>");
 		out.close();
 		
 	}
