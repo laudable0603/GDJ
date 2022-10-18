@@ -28,8 +28,8 @@ public class PapagoServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// 클라이언트 아이디, 시크릿
-		String clientId = "MfHKZlNOIPwPkhpvP42V";
-		String clientSecret = "i1ZAky8pkC";
+		String clientId = "ZuA2Hxw8DnfFAdWjRSk4";
+		String clientSecret = "oaR8PF5cnk";
 		
 		// 요청 파라미터(원본언어, 목적언어, 번역할텍스트)
 		String source = request.getParameter("source");
@@ -72,7 +72,7 @@ public class PapagoServlet extends HttpServlet {
 			con.setRequestProperty("X-Naver-Client-Secret", clientSecret);
 			// 요청 메소드
 			con.setRequestMethod("POST");
-			con.setDoOutput(true);/*요청 방식이 POST일 때 필수로 작성*/
+			con.setDoOutput(true);
 			// 요청 파라미터 보내기
 			String params = "source=" + source + "&target=" + target + "&text=" + text;
 			OutputStream outputStream = con.getOutputStream();
@@ -114,8 +114,6 @@ public class PapagoServlet extends HttpServlet {
 			out.println("API 응답이 실패했습니다.");
 			out.close();
 		}
-		
-		System.out.println(sb.toString());
 		
 		// client.html로 API 응답 결과(StringBuilder) 보내기
 		response.setContentType("application/json; charset=UTF-8");

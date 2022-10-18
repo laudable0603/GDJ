@@ -12,45 +12,50 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-
-
-
-
 @WebServlet("/FormServlet")
+
+
 public class FormServlet extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
        
-    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//요청
+	
+		// 요청
 		request.setCharacterEncoding("UTF-8");
 		
-		//변수
+		// 변수(파라미터)
+		
 		String id = request.getParameter("id");
-		if(id == null || id.isEmpty()) {//널인지 빈문자열인지 구분 안되면 해당 코드 사용하자.
+		if(id.isEmpty()) {
 			id = "빈 아이디";
-		}		
+		}
+		
 		String pwd = request.getParameter("pwd");
 		if(pwd.isEmpty()) {
 			pwd = "빈 비밀번호";
 		}
+		
 		String gender = request.getParameter("gender");
 		if(gender == null) {
-			gender = "체크안함";
+			gender = "빈 성별";
 		}
+		
 		String city = request.getParameter("city");
 		if(city.isEmpty()) {
-			city = "도시선택X";
+			city = "빈 도시";
 		}
-		String email_id = request.getParameter("email_id");
-		String domain = request.getParameter("domain");
 		
-		//배열
+		// 배열(파라미터)
 		String[] phone = request.getParameterValues("phone");
-		for(int i=0; i<phone.length; i++) {
-			if(phone[i].isEmpty()) {
-				phone[i] = "빈 전화" + (i+1);
-			}
+		if(phone[0].isEmpty()) {
+			phone[0] = "빈 전화1";
+		}
+		if(phone[1].isEmpty()) {
+			phone[1] = "빈 전화2";
+		}
+		if(phone[2].isEmpty()) {
+			phone[2] = "빈 전화3";
 		}
 		String strPhone = phone[0] + "-" + phone[1] + "-" + phone[2];
 		
@@ -60,32 +65,29 @@ public class FormServlet extends HttpServlet {
 			agree[0] = "빈 동의";
 		}
 		
+		// 연습(이메일)
+		String emailId = request.getParameter("email_id");
+		String domain = request.getParameter("domain");
 		
-		
-		//응답
+		// 응답
 		response.setContentType("text/html; charset=UTF-8");
+		
 		PrintWriter out = response.getWriter();
-		
-		
 		out.println("<h3>아이디 : " + id + "</h3>");
-		out.println("<h3>비밀번호 : " + pwd + "</h3>");		
-		out.println("<h3> 성별: " + gender + "</h3>");
-		out.println("<h3> 거주지: " + city + "</h3>");
-		out.println("<h3> 핸드폰: " + strPhone + "</h3>");		
-		out.println("<h3> 이메일: " + email_id +"@"+ domain + "</h3>");		
-		out.println("<h3>동의여부 : " + Arrays.toString(agree) + "</h3>");		
+		out.println("<h3>비밀번호 : " + pwd + "</h3>");
+		out.println("<h3>성별 : " + gender + "</h3>");
+		out.println("<h3>도시 : " + city + "</h3>");
+		out.println("<h3>연락처 : " + strPhone + "</h3>");
+		out.println("<h3>동의여부 : " + Arrays.toString(agree) + "</h3>");
+		out.println("<h3>이메일 : " + emailId + "@" + domain + "</h3>");
 		List<String> list = Arrays.asList(agree);
 		if(list.contains("marketing")) {
 			out.println("<h3>마케팅 동의한 회원</h3>");
 		}
-		
-			
-		
-		
 		out.close();
+		
 	}
 
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}

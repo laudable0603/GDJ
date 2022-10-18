@@ -43,6 +43,7 @@ public class XMLServlet extends HttpServlet {
 		// 응답할 JSON 객체를 XML로 변환하기
 		String responseXML = XML.toString(person);
 		/*
+			== responseXML의 모습 ==
 			<person>
 				<name>민경태</name>
 				<age>45</age>

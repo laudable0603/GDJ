@@ -16,21 +16,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 @WebServlet("/MovieXMLServlet")
+
+
 public class MovieXMLServlet extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
-       
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 클라이언트 아이디, 시크릿
-		String clientId="MfHKZlNOIPwPkhpvP42V";
-		String clientSecret="i1ZAky8pkC";
 		
-		// 요청 파라미터(검색어, 검색 결과수)
+		// 클라이언트 아이디, 시크릿
+		String clientId = "ZuA2Hxw8DnfFAdWjRSk4";
+		String clientSecret = "oaR8PF5cnk";
+		
+		// 요청 파라미터(검색어, 검색결과수)
 		request.setCharacterEncoding("UTF-8");
 		String query = request.getParameter("query");
 		String display = request.getParameter("display");
 		
-		// 검섹어 UTF-8 인코딩
+		// 검색어 UTF-8 인코딩
 		try {
 			query = URLEncoder.encode(query, "UTF-8");
 		} catch(UnsupportedEncodingException e) {
@@ -41,9 +46,7 @@ public class MovieXMLServlet extends HttpServlet {
 		}
 		
 		// API 접속
-		
-		
-		String apiURL= "https://openapi.naver.com/v1/search/movie.xml?query=" + query + "&display=" + display;
+		String apiURL = "https://openapi.naver.com/v1/search/movie.xml?query=" + query + "&display=" + display;
 		URL url = null;
 		HttpURLConnection con = null;
 		try {
@@ -57,12 +60,13 @@ public class MovieXMLServlet extends HttpServlet {
 		} catch (IOException e) {
 			response.setContentType("text/plain; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.println("API 연결이 실패하였습니다.");
+			out.println("API 연결이 실패했습니다.");
 			out.close();
 		}
+		
 		// API 요청
 		try {
-			//요청 메소드
+			// 요청 메소드
 			con.setRequestMethod("GET");
 			// 요청 헤더
 			con.setRequestProperty("X-Naver-Client-Id", clientId);
@@ -70,23 +74,23 @@ public class MovieXMLServlet extends HttpServlet {
 		} catch (IOException e) {
 			response.setContentType("text/plain; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.println("API 요청이 실패하였습니다.");
+			out.println("API 요청이 실패했습니다.");
 			out.close();
 		}
 		
 		// API 응답 스트림 생성(정상 스트림, 에러 스트림)
 		BufferedReader reader = null;
 		try {
-			int responseCode = con.getResponseCode(); // 응답코드(status)를 의미함
+			int responseCode = con.getResponseCode();  // 응답코드(status)를 의미함
 			if(responseCode == HttpURLConnection.HTTP_OK) {
 				reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
-			} else { 
+			} else {
 				reader = new BufferedReader(new InputStreamReader(con.getErrorStream()));
 			}
-		} catch (IOException e) {
+		} catch(IOException e) {
 			response.setContentType("text/plain; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.println("API 응답 스트림 생성이 실패하였습니다.");
+			out.println("API 응답 스트림 생성이 실패했습니다.");
 			out.close();
 		}
 		
@@ -94,22 +98,22 @@ public class MovieXMLServlet extends HttpServlet {
 		StringBuilder sb = new StringBuilder();
 		String line = null;
 		try {
-			while((line = reader.readLine()) != null){
+			while((line = reader.readLine()) != null) {
 				sb.append(line);
 			}
-		} catch (IOException e) {
+		} catch(IOException e) {
 			response.setContentType("text/plain; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.println("API 응답이 실패하였습니다.");
+			out.println("API 응답이 실패했습니다.");
 			out.close();
 		}
 		
 		// client.html로 API 응답 결과 보내기
 		response.setContentType("application/xml; charset=UTF-8");
+		
 		PrintWriter out = response.getWriter();
 		out.println(sb.toString());
 		out.close();
-		
 		
 	}
 

@@ -14,10 +14,10 @@
 		// 로그인 유지하기를 체크했다면 로그인 정보를 쿠키에 저장(브라우저를 닫아도 정보를 유지하기 위해서)
 		if(chkKeepLogin != null){
 			Cookie cookie1 = new Cookie("id", id);
-			cookie1.setMaxAge((3600 * 24) * 7);
+			cookie1.setMaxAge(60 * 60 * 24 * 7);
 			response.addCookie(cookie1);
 			Cookie cookie2 = new Cookie("pwd", pwd);
-			cookie2.setMaxAge((3600 * 24) * 7);
+			cookie2.setMaxAge(60 * 60 * 24 * 7);
 			response.addCookie(cookie2);
 		}
 		// 로그인 유지하기를 체크하지 않았다면 일반 로그인 처리(로그인 정보를 세션에 저장)

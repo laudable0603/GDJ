@@ -11,10 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
 
+
 @WebServlet("/JSONServlet")
+
+
 public class JSONServlet extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
+       
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		// 요청
 		request.setCharacterEncoding("UTF-8");
 		
@@ -28,12 +34,11 @@ public class JSONServlet extends HttpServlet {
 		obj.put("age", age);
 		
 		// 응답
-		response.setContentType("application/json; charset=UTF-8"); //JSON 데이터의 MINE-TYPE
+		response.setContentType("application/json; charset=UTF-8");  // JSON 데이터의 MIME-TYPE
 		
 		PrintWriter out = response.getWriter();
-		out.println(obj.toString()); // 응답 데이터는 텍스트 처리된 JSON의 객체
+		out.println(obj.toString());  // 응답 데이터는 텍스트 처리된 JSON 객체
 		out.close();
-		
 		
 	}
 

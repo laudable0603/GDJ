@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-	label{
+	label {
 		display: block;
 	}
 	label span {
@@ -18,15 +18,17 @@
 </style>
 </head>
 <body>
+
 	<%
 		Date date = new Date();
 		String today = new SimpleDateFormat("yyyy-MM-dd").format(date);
 		
-		// today의 EL 사용을 위해 속성으로 저장
+		// today의 EL 사용을 위해서 속성으로 저장
 		pageContext.setAttribute("today", today);
 	%>
+
 	<div>
-		<form action="<%=request.getContextPath()%>/ex03_binding/03_qna2.jsp"><!-- 컨텍스트 패스 표현식처리 -->
+		<form method="POST" action="<%=request.getContextPath()%>/ex03_binding/03_qna2.jsp">
 			<label for="created_date">
 				<span>작성일</span>
 				<input type="text" name="created_date" id="created_date" value="${today}">
@@ -41,12 +43,12 @@
 			</label>
 			<label for="content">
 				<span>내용</span>
-				<input type="text" name="content" id="content">				
+				<input type="text" name="content" id="content">
 			</label>
 			<button>문의 남기기</button>
 			<input type="reset" value="다시작성">
 		</form>
 	</div>
-	
+
 </body>
 </html>

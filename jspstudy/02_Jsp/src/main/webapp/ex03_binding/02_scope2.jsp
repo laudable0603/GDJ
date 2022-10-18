@@ -8,12 +8,10 @@
 </head>
 <body>
 
-
-<div>a: ${a}</div>
-<div>b: ${b}</div>
-<div>c: ${c}</div><!-- forward방식으로 인해 넘어온다 -->
-<div>d: ${d}</div><!-- 페이지가 바뀌어서 값을 확인 불가능하다. -->
-
+	<div>a : ${a}</div>
+	<div>b : ${b}</div>
+	<div>c : ${c}</div>
+	<div>d : ${d}</div>
 
 </body>
 </html>

@@ -4,11 +4,9 @@
 	request.setCharacterEncoding("UTF-8");
 	String title = request.getParameter("title");
 	if(title == null){
-		title = "환영합니다.";
+		title = "환영합니다";
 	}
-	
 %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +14,7 @@
 <title><%=title%></title>
 </head>
 <body>
+
 	<header>
 		<h1>홈페이지</h1>
 		<nav>
@@ -27,4 +26,3 @@
 			</ul>
 		</nav>
 	</header>
-
