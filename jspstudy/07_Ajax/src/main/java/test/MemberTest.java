@@ -1,0 +1,48 @@
+package test;
+
+import static org.junit.Assert.*;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+
+import javax.net.ssl.HttpsURLConnection;
+
+import org.json.JSONObject;
+import org.junit.Test;
+
+
+
+public class MemberTest {
+
+	@Test
+	public void 회원목록테스트() {
+		
+		//회원목록을 반환하는 MemberListService() 동작 전반을 살펴보는 테스트
+		
+		 
+		try {
+			String apiURL = "http://localhost:9090/07_Ajax/member/list.do";
+			URL url = new URL(apiURL);
+			HttpsURLConnection con = (HttpsURLConnection)url.openConnection();
+			
+			BufferedReader reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			StringBuilder sb = new StringBuilder();
+			String line;
+			while((line = reader.readLine()) != null) {
+				sb.append(line);
+			}
+			JSONObject obj = new JSONObject(sb.toString());
+			assertEquals(2, obj.getInt("count"));
+			
+			
+			reader.close();
+			con.disconnect();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
+
+}
