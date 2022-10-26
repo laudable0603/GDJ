@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -45,6 +46,7 @@ public class MemberController extends HttpServlet {
 			Map<String, String> map = service.getCaptchaImage(request, key);
 			request.setAttribute("dirname", map.get("dirname"));
 			request.setAttribute("filename", map.get("filename"));
+			request.setAttribute("key", map.get("key"));
 			
 			// ActionForward 생성
 			af = new ActionForward("/member/login.jsp", false);
@@ -52,6 +54,19 @@ public class MemberController extends HttpServlet {
 		case"/member/refreshCaptcha.do":
 			service.refreshCaptcha(request, response); //ajax이동이기때문에 액션포워드 x
 			break;
+		case "/member/validateCaptcha.do":
+			boolean result = service.validateUserInput(request);
+			if(result) {
+				af = new ActionForward("/member/success.jsp", false);
+			} else {
+				PrintWriter out = response.getWriter();
+				out.println("<script>");
+				out.println("alert('자동입력 방지문자를 확인하세요');");
+				out.println("location.href='"+request.getContextPath() + "/member/loginPage.do';");
+				out.println("</script>");
+				out.close();
+			}
+		
 		}
 		
 		

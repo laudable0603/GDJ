@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 
+		안녕. 난 Spring Bean Configuration File이야.
+		난 Bean을 만드는 xml이야
+		내가 만든 Bean은 컨테이너(Container)에 보관되지.
+	 -->
+	 
+	<!-- 
+	 	 디폴트 생성자 + setter
+	 -->
+	 <!-- 
+	 	property는 name 속성과 class속성 파일의 setter와 연결이 된다.
+	 	ref는 bean속성을 사용하여 다른 bean의 id와 연결해준다.
+	 	byte, short, int, long, float, double, boolean, char, String 등 기본 타입은 value 태그 사용
+	 	나머지 참조 타입은 ref 사용
+	  -->
+	<bean id="calc" class="com.gdu.app01.xml01.Calculator" ></bean>
+	<bean id="haksang" class="com.gdu.app01.xml01.Student">
+		<property name="name">
+			<value>홍길동</value>
+		</property>
+		<property name="school">
+			<value>가산대학교</value>
+		</property>
+		<property name="calculator">
+			<ref bean="calc" />
+		</property>
+	</bean>
+</beans>
