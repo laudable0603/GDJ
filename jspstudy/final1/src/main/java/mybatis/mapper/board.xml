@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="mybatis.mapper.board">
+
+	<!--
+		1. 게시글 목록
+	-->
+	<select id="selectAllBoards" resultType="Board">
+		SELECT BOARDLIST_NO, WRITER, TITLE, CREATE_DATE
+		  FROM BOARDLIST
+		 ORDER BY BOARDLIST_NO DESC
+	</select>
+
+	<!-- 2. 전체 게시글 수 -->
+	<select id="selectAllBoardsCount" resultType="int">
+		SELECT COUNT(*)
+		  FROM BOARDLIST
+	</select>
+	
+	<!-- 3. 게시글 상세보기 -->
+	<select id="selectBoardByNo" parameterType="int" resultType="Board">
+		SELECT BOARDLIST_NO, WRITER, TITLE, CONTENT, CREATE_DATE
+		  FROM BOARDLIST
+		 WHERE BOARDLIST_NO = #{boardNo}
+	</select>
+	
+	
+	
+	<!-- 4. 게시글 등록 -->
+	<insert id="insertBoard" parameterType="Board">
+		INSERT INTO BOARDLIST
+			(BOARDLIST_NO, WRITER, TITLE, CONTENT, CREATE_DATE)
+		VALUES
+			(BOARDLIST_SEQ.NEXTVAL, #{writer}, #{title}, #{content}, SYSDATE)
+	</insert>
+	
+	<!-- 5. 게시글 수정 -->
+	<update id="updateBoard" parameterType="Board">
+		UPDATE BOARDLIST
+		   SET TITLE = #{title}, CONTENT = #{content}
+		 WHERE BOARDLIST_NO = #{boardlistNo}
+	</update>
+	
+	<!-- 6. 게시글 삭제 -->
+	<delete id="deleteBoard" parameterType="int">
+		DELETE
+		  FROM BOARDLIST
+		 WHERE BOARDLIST_NO = #{boardlistNo}
+	</delete>
+</mapper>

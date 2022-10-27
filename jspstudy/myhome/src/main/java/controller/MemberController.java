@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,17 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import common.ActionForward;
-import service.BoardAddService;
-import service.BoardDetailService;
-import service.BoardEditService;
-import service.BoardListService;
-import service.BoardModifyService;
-import service.BoardRemoveService;
-import service.BoardService;
+import service.MemberService;
+import service.MemberServiceImpl;
 
-@WebServlet("*.do")
+@WebServlet("*.me")
 
-public class BoardController extends HttpServlet {
+public class MemberController extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
        
@@ -33,48 +29,20 @@ public class BoardController extends HttpServlet {
 		String contextPath = request.getContextPath();
 		String urlMapping = requestURI.substring(contextPath.length());
 		
-		// BoardService 객체
-		BoardService service = null;
+		// MemberServiceImpl 객체 생성(
+		MemberService service = new MemberServiceImpl();
 		
 		// ActionForward 객체
 		ActionForward af = null;
 		
-		// 요청에 따른 Service 선택
+		// 요청에 따른 메소드 선택 및 실행
 		switch(urlMapping) {
-		// 비즈니스 로직
-		case "/board/list.do":
-			service = new BoardListService();
+		case "/member/login.me":
+			af = service.login(request, response);
 			break;
-		case "/board/detail.do":
-			service = new BoardDetailService();
+		case "/member/logout.me":
+			af = service.logout(request, response);
 			break;
-		case "/board/add.do":
-			service = new BoardAddService();
-			break;
-		case "/board/remove.do":
-			service = new BoardRemoveService();
-			break;
-		case "/board/edit.do":
-			service = new BoardEditService();
-			break;
-		case "/board/modify.do":
-			service = new BoardModifyService();
-			break;
-		// 단순이동(포워딩)
-		case "/board/write.do":
-			af = new ActionForward();
-			af.setView("/board/write.jsp");
-			af.setRedirect(false);
-			break;
-		}
-		
-		// 선택된 Service 실행
-		try {
-			if(service != null) {
-				af = service.execute(request, response);
-			}
-		} catch(Exception e) {
-			e.printStackTrace();
 		}
 		
 		// 어디로 어떻게 이동하는가?
