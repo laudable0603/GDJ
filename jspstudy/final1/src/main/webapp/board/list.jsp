@@ -34,6 +34,9 @@
 				<tr>
 					<td colspan="4">게시물이 없습니다.</td>
 				</tr>
+				<tr>
+					<td colspan="4"><button id="btn_write">새글작성</button></td>
+				</tr>
 			</c:if>
 			<c:if test="${count ne 0}">
 				<c:forEach items="${boards}" var="b">
