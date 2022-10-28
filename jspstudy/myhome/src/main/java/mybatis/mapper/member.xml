@@ -22,6 +22,6 @@
 	<delete id="deleteMember" parameterType="int">
 		DELETE
 		  FROM MEMBER
-		 WHERE MEMBER_NO = ${memberNo}
+		 WHERE MEMBER_NO = #{memberNo}
 	</delete>
 </mapper>
