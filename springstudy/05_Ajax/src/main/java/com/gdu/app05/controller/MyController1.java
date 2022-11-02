@@ -76,22 +76,6 @@ public class MyController1 {
 		// return memberService.execute3(member); 해당코드 사용
 	}
 	
-	/*
-	  @RequestBody
-	  안녕, 난 요청 데이터가 body에 포함되어 있다고 알려주는 일을 해.
-	  요청 파라미터에서는 사용할 수 없고,
-	  POST 방식으로 파라미터 없이  데이터가 전달될 때 사용할 수 있어.
-	 */
-	
-	@ResponseBody
-	@PostMapping(value="member/detail4"
-			   , produces=MediaType.APPLICATION_JSON_VALUE)
-	public Member detail4(@RequestBody Member member) {
-		//post 방식으로 요청되는 데이터는
-		return memberService.execute4(member);
-	}
-	
-	
 	
 	
 }
