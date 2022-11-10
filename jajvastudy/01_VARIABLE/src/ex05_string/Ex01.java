@@ -15,10 +15,11 @@ public class Ex01 {
 		System.out.println(str2);
 		System.out.println(str3);
 		
-		// + 연산을 이용한 문자열 만들기
-		// 빈 문자열("")을 +해 준다.
+		//+ 연산을 이용한 문자열 만들기
+		//빈 문자열("")을 +해 준다.
 		String str4 = 100 + "";// String.valueOf(100)과 동일.
 		System.out.println(str4);
+		
 		
 		
 	}

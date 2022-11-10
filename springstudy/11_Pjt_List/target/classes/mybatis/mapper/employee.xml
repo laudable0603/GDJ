@@ -75,5 +75,12 @@
 		                 ORDER BY HIRE_DATE DESC) A) B
 		 WHERE B.RN BETWEEN #{begin} AND #{end}
 	</select>
+	
+	<select id="selectAutoCompleteList" parameterType="Map" resultType="EmpDTO">
+		SELECT DISTINCT ${target}
+		  FROM EMPLOYEES
+		 WHERE ${target} LIKE CONCAT(#{param}, '%')
+		 <!-- CONCAT() 문자열 연결 세 개는 안됨  -->
+	</select>
 
 </mapper>
