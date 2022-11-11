@@ -17,7 +17,7 @@
 	
 	<select id="selectAllBbsList" parameterType="Map" resultType="BbsDTO">
 		SELECT A.RN, A.BBS_NO, A.WRITER, A.TITLE, A.IP, A.CREATE_DATE, A.STATE, A.DEPTH, A.GROUP_NO, A.GROUP_ORDER
-		  FROM (SELECT ROW_NUMBER() OVER(ORDER BY BBS_NO DESC) AS RN, BBS_NO, WRITER, TITLE, IP, CREATE_DATE, STATE, DEPTH, GROUP_NO, GROUP_ORDER
+		  FROM (SELECT ROW_NUMBER() OVER(ORDER BY GROUP_NO DESC, GROUP_ORDER ASC) AS RN, BBS_NO, WRITER, TITLE, IP, CREATE_DATE, STATE, DEPTH, GROUP_NO, GROUP_ORDER
 		  	      FROM BBS) A
 		 WHERE A.RN BETWEEN #{begin} AND #{end}
 	</select>
@@ -27,21 +27,29 @@
 			(BBS_NO, WRITER, TITLE, IP, CREATE_DATE, STATE, DEPTH, GROUP_NO, GROUP_ORDER)
 		VALUES
 			(BBS_SEQ.NEXTVAL, #{writer}, #{title}, #{ip}, SYSDATE, 1, 0, BBS_SEQ.CURRVAL, 0)
-		
-	
-	
 	</insert>
 	
+	<!-- 
+		updatePreviousReply 쿼리
+		기존 답글들의 그룹오더를 1증가시키는 쿼리문
+		#{groupNo}는 원글의 GROUP_NO
+		#{groupOrder}는 원글의 GROUP_ORDER
+	 -->
+	<!-- 원글의 ORDER를 알아와야한다.         원글정보⤵  -->
 	<update id="updatePreviousReply" parameterType="BbsDTO">
-	
-	
-	
+		UPDATE BBS
+		   SET GROUP_ORDER = GROUP_ORDER + 1
+		 WHERE GROUP_NO = #{groupNo}
+		   AND GROUP_ORDER > #{groupOrder}
 	</update>
 	
+	<!-- 원글에 의해 해당 값들이 수정되어 온다. -->
+	<!-- DEPTH, GROUP_NO, GROUP_ORDER  답글정보⤵  -->
 	<insert id="insertReply" parameterType="BbsDTO">
-	
-	
-	
+		INSERT INTO BBS
+			(BBS_NO, WRITER, TITLE, IP, CREATE_DATE, STATE, DEPTH, GROUP_NO, GROUP_ORDER)
+		VALUES
+			(BBS_SEQ.NEXTVAL, #{writer}, #{title}, #{ip}, SYSDATE, 1, #{depth}, #{groupNo}, #{groupOrder})
 	</insert>
 	
 	<update id="deleteBbs" parameterType="int">
