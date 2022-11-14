@@ -107,6 +107,18 @@
 	  
 	  
 	  }
+	  .inputText {
+	  	weight: 100%;
+	  	width: 20%;
+	  	padding: 10px;
+	  	margin-left: 22px;
+	  }
+	  
+	  #inputDiv{
+	  	weight: 100%;
+	  	width: 100%;
+	  }
+	  
 	
 	.lnk_remove {
 		cursor: pointer;
@@ -196,11 +208,13 @@
 						<tr class="reply_write_tr blind">
 							<td colspan="6">
 								<form method="post" action="${contextPath}/bbs/reply/add">
-									<div><input type="text" name="writer" placeholder="작성자" required></div>
-									<div><input type="text" name="title" placeholder="제목" required></div>
-									<div><button>답글달기</button></div>
-									<input type="hidden" name="depth" value="${bbs.depth}">
-									<input type="hidden" name="groupNo" value="${bbs.groupNo}">
+									<div id="inputDiv">
+										<input type="text" name="writer" placeholder="작성자" required class="inputText"> 
+										<input type="text" name="title" placeholder="제목" required class="inputText"> 
+										<button>답글달기</button>
+									</div>
+									<input type="hidden" name="depth" value="${bbs.depth}" >
+									<input type="hidden" name="groupNo" value="${bbs.groupNo}" >
 									<input type="hidden" name="groupOrder" value="${bbs.groupOrder}">
 								</form>
 							</td>
