@@ -22,6 +22,9 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
+	// interceptor: true/ false
+	// 모든 매핑 앞에 붙어 실행 시키는 코드 로그인 유지등에 쓰인다.(만들어만 두면 스스로 개입한다)
+	
 	@GetMapping("/")
 	public String index() {
 		return "index";
@@ -66,7 +69,7 @@ public class UserController {
 		userService.join(request, response);
 	}
 	
-	@GetMapping("/user/retire")
+	@PostMapping("/user/retire")
 	public void retire(HttpServletRequest request, HttpServletResponse response) {
 		userService.retire(request, response);
 	}
@@ -87,14 +90,31 @@ public class UserController {
 	
 	@GetMapping("/user/logout")
 	public String logout(HttpServletRequest request, HttpServletResponse response) {
-		request.getSession().invalidate();
+		userService.logout(request, response);
 		return "redirect:/";
 	}
 	
+	@GetMapping("/user/check/form")
+	public String requiredLogin_checkForm() {
+		return "user/check";
+	}
 	
+	@ResponseBody
+	@PostMapping(value="/user/check/pw"
+			   , produces="application/json")
+	public Map<String, Object> requiredLogin_checkPw(HttpServletRequest request) {
+		return userService.confirmPassword(request);
+	}
 	
+	@GetMapping("/user/mypage")
+	public String requiredLogin_mypage() {
+		return "user/mypage";
+	}
 	
-	
+	@PostMapping("/user/modify/pw")
+	public void requiredLogin_modifyPw(HttpServletRequest request, HttpServletResponse response) {
+		userService.modifyPassword(request, response);
+	}
 	
 	
 	

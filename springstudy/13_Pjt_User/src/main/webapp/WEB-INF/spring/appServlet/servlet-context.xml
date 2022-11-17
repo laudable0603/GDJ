@@ -22,7 +22,33 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.gdu.app13" />
+		
+	<!-- Intercepter -->
+	
+	<beans:bean id="keepLoginInterceptor" class="com.gdu.app13.interceptor.KeepLoginInterceptor"></beans:bean>
+	
+	<interceptors>
+		<interceptor>
+			<mapping path="/**"/>
+			<beans:ref bean="keepLoginInterceptor"/>
+		</interceptor>
+		<interceptor>
+			<mapping path="/user/login/form"/>
+			<mapping path="/user/join/write"/>
+			<mapping path="/user/agree"/>
+			<beans:bean class="com.gdu.app13.interceptor.PreventLoginInterceptor" />
+		</interceptor>
+	</interceptors>
 	
 	
+	<!-- 컴포넌트로 처리했다.
+	 <beans:bean id="preventLoginInterceptor" class="com.gdu.app13.interceptor.PreventLoginInterceptor"></beans:bean>
+	
+	<interceptors>
+		<interceptor>
+			<mapping path="/user/login/form"/>
+			<beans:ref bean="preventLoginInterceptor"/>
+		</interceptor>
+	</interceptors> -->
 	
 </beans:beans>
