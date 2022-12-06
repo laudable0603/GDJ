@@ -1,0 +1,40 @@
+# properties 파일에서 샵(#)으로 시작하면 주석.
+
+# STS3 와 달리 조각난 정보를 application.properties에 저장
+# 주의!! : 공백 없이 작성
+
+# servlet-context.xml -> jsp 안쓰면 필요없음
+#static-locations : 정적 자원 위치
+#spring.web.resources.static-locations=/resources/**
+#spring.mvc.view.prefix=/WEB-INF/views/
+#spring.mvc.view.suffix=.jsp
+
+# server.port
+# web.xml
+# session (1800 sescons = 30 minutes)
+server:
+  port: 9090
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+    session:
+      timeout: 1800
+
+# database connection
+
+spring:
+  datasource:
+    hikari:
+      driver-class-name: oracle.jdbc.OracleDriver
+      jdbc-url: jdbc:oracle:thin:@localhost:1521:xe
+      username: SCOTT
+      password: TIGER
+    
+# mybatis
+
+mybatis:
+  config-location: mybatis/config/mybatis-config.xml
+  mapper-locations: mybatis/mapper/*.xml
+

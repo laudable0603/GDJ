@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
@@ -31,7 +31,7 @@ pageEncoding="UTF-8"%>
 				<c:forEach items="${blogList}" var="blog" varStatus="vs">
 					<tr>
 						<td>${beginNo - vs.index}</td>
-						<td>${blog.title}</td>
+						<td><a href="${contextPath}/blog/increse/hit?blogNo=${blog.blogNo}">${blog.title}</a></td>
 						<td>${blog.hit}</td>
 						<td>${blog.createDate}</td>
 					</tr>

@@ -241,8 +241,11 @@ public class UserServiceImpl implements UserService {
 		UserDTO loginUser = (UserDTO) session.getAttribute("loginUser");
 
 		// 탈퇴할 회원 RetireUserDTO 생성
-		RetireUserDTO retireUser = RetireUserDTO.builder().userNo(loginUser.getUserNo()).id(loginUser.getId())
-				.joinDate(loginUser.getJoinDate()).build();
+		RetireUserDTO retireUser = RetireUserDTO.builder()
+				.userNo(loginUser.getUserNo())
+				.id(loginUser.getId())
+				.joinDate(loginUser.getJoinDate())
+				.build();
 
 		// 탈퇴처리
 		int deleteResult = userMapper.deleteUser(loginUser.getUserNo());
